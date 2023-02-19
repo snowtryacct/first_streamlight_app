@@ -32,7 +32,7 @@ my_cur.execute("select name,family from pc_rivery_db.public.fruityvice")
 my_data_row = my_cur.fetchall()
 streamlit.text("Hello from Snowflake:")
 streamlit.dataframe(my_data_row)
-add_my_fruit = my_data_row.set_index('Name')
+add_my_fruit = my_data_row.set_index(Name)
 fruits_selected = streamlit.multiselect("Pick soem fruits:", list(add_my_fruit.index),['Banana'])
 
 streamlit.dataframe(fruits_selected)
