@@ -33,7 +33,7 @@ my_data_row = my_cur.fetchall()
 streamlit.text("Hello from Snowflake:")
 streamlit.dataframe(my_data_row)
 #add_my_fruit = my_data_row.set_index(Name)
-fruits_selected = streamlit.multiselect("Pick some fruits:", my_data_row[name],['Banana'])
+fruits_selected = streamlit.multiselect("Pick some fruits:", my_data_row['name'],['Banana'])
 
 streamlit.dataframe(fruits_selected)
 
