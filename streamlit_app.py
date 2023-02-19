@@ -31,6 +31,10 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select * from pc_rivery_db.public.fruityvice")
 my_data_row = my_cur.fetchall()
 streamlit.text("Hello from Snowflake:")
-streamlit.dataframe(my_data_row)
+
+my_fruit_list = my_data_row.set_index('Orange')
+fruits_selected = streamlit.multiselect("Pick soem fruits:", list(my_fruit_list.index),['Banana','Rubus	Raspberry'])
+
+streamlit.dataframe(fruits_selected)
 
 streamlit.header('End')
