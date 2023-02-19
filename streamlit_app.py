@@ -1,9 +1,11 @@
 import streamlit
 import pandas
-streamlit.title('My Parents new Healthy Diner')
 import requests
 import snowflake.connector
+from urllib.error import URLError
 
+streamlit.stop()
+streamlit.title('My Parents new Healthy Diner')
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥗Kale, Spanish & Rocket Smoothie')
@@ -16,7 +18,7 @@ fruits_selected = streamlit.multiselect("Pick soem fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 streamlit.header('Fruityvice fruit Advice!')
-import requests
+
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
